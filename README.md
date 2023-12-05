@@ -1,3 +1,4 @@
-# Resolver XML generator
+# Codeforces Points Filtration
 
-A contest data converter generates an XML file that is accepted by the ICPC resolver tool.
+An app that enteres N number of contests and points for each question and returns a list of the handles 
+and points
