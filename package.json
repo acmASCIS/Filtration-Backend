@@ -49,11 +49,8 @@
   "dependencies": {
     "@acmascis/codeforces-client": "github:acmascis/codeforces-client",
     "@types/express": "^4.17.21",
-    "commander": "^10.0.0",
     "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "lodash": "^4.17.21",
-    "xml": "^1.0.1"
+    "express": "^4.18.2"
   },
   "git": {
     "commitMessage": "chore: release v${version}"
