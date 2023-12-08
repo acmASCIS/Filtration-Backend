@@ -9,13 +9,15 @@ export const filter = async (req: Request, res: Response) => {
 
     const contestIds: string[] = req.body.contestIds;
     const contestPoints: number[][] = req.body.contestPoints;
+    const upsolving:boolean[] = req.body.upsolving;
+
     let userPoints: { [handle: string]: number } = {};
 
     for (const [index, contestId] of contestIds.entries()) {
         try {
             const response = await getStatusData(codeForcesClient, contestId);
             if (response.status === 'OK') {
-                userPoints = calculatePointsForContest(response.result, contestPoints[index], userPoints);
+                userPoints = calculatePointsForContest(response.result, contestPoints[index], userPoints, upsolving[index]);
             }
             else {
                 return res.status(500).json({ status: "failed", error: `Error fetching data for contest ${contestId}`, message: response.comment });
